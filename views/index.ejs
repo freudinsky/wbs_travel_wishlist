@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Travel Wishlist</title>
+	</head>
+	<body>
+		<h1 style="margin: 2rem;">Travel Wishlist</h1>
+
+		<div style="display: flex; align-items: start">
+			<div style="margin: 0 2rem">
+				<h2>Country-List</h2>
+				<ul>
+					<% countries.map((country, index) => { %>
+					<li key="<%= index %>"><%=country.name%></li>
+					<% }); %>
+				</ul>
+			</div>
+
+			<div style="margin: 0 2rem">
+				<h2>Add new country</h2>
+				<form
+					action="/countries"
+					method="post"
+					style="display: flex; flex-direction: column; width: 100%"
+				>
+					<label for="name">Country-Name</label>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						required
+						style="margin-bottom: 0.5rem"
+					/>
+					<label for="alpha2Code">Alpha 2 Code</label>
+					<input
+						type="text"
+						name="alpha2Code"
+						id="alpha2Code"
+						required
+						style="margin-bottom: 0.5rem"
+					/>
+					<label for="alpha3Code">Alpha 3 Code</label
+					><input
+						type="text"
+						name="alpha3Code"
+						id="alpha3Code"
+						required
+						style="margin-bottom: 0.5rem"
+					/>
+					<input
+						type="submit"
+						value="Add country"
+						style="width: 50%; align-self: center"
+					/>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
